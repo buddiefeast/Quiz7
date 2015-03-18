@@ -1,0 +1,15 @@
+\documentclass{article}
+
+\begin{document}
+
+<<Chunk1, echo=FALSE>>=
+library("rvest")
+ebola <- html("http://en.wikipedia.org/wiki/Ebola_virus_epidemic_in_West_Africa") 
+dF <- html_table(html_nodes(ebola, "table")[[2]])
+dF
+@
+
+The World Health Organization (WHO) and respective governments have reported a total of \Sexpr{24632} suspected cases and \Sexpr{10159} deaths,though the WHO believes that this substantially understates the magnitude of the outbreak. In the United States there has been \Sexpr{4} reported cases and \Sexpr{1} deaths.
+
+
+\end{document}
